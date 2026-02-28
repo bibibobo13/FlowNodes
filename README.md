@@ -20,10 +20,6 @@ Tasks are represented by their complexity:
 * Virtue-based tracking
 * "The obstacle is the way"
 
-## 👦 The Journey
-
-I'm 12, learning Rust, building in public.
-
 **Progress: Day 1/140** 🔥
 
 - [x] Day 1: Foundation ✅
