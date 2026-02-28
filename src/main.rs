@@ -29,6 +29,8 @@ fn add_task(tasks: &mut Vec<Task>) {
         text: Maded_Task,
         completed: false,
     };
+    tasks.push(Users_Task);
+    println!("Added New Task");
 }
 
 fn shorter_input() -> String {
