@@ -1,6 +1,7 @@
 //raw Code No TUI or Gui for now
 //Tasks Struct
 use std::io;
+#[derive(Debug)]
 struct Task {
     text: String,
     completed: bool,
@@ -15,22 +16,62 @@ fn main() {
         let selected = shorter_input().parse().expect("BimBimBamBam");
         match selected {
             1 => add_task(&mut tasks),
-            2 => println!("Not Done Currently"),
+            2 => edit_task(&mut tasks),
+            3 => mark_done(&mut tasks,),
             5 => break,
             _ => println!("Wrong Number"),
         }
     }
 }
 fn add_task(tasks: &mut Vec<Task>) {
-    let mut New_Task = String::new();
-    io::stdin().read_line(&mut New_Task).expect("Error");
-    let mut Maded_Task = New_Task.trim().to_string();
-    let mut Users_Task = Task {
-        text: Maded_Task,
+    let mut new_task = String::new();
+    io::stdin().read_line(&mut new_task).expect("Error");
+    let main_task = new_task.trim().to_string();
+    let users_task = Task {
+        text: main_task,
         completed: false,
     };
-    tasks.push(Users_Task);
+    tasks.push(users_task);
     println!("Added New Task");
+}
+
+fn edit_task(tasks: &mut Vec<Task>) {
+    if tasks.is_empty() {
+        println!("You Doesnt Have Anything");
+    } else {
+        println!("Heres All You Have {:?}", tasks);
+        println!("Which One You Want To Edit use only number ");
+        let i: u8 = shorter_input().parse().expect("BimBimBamBam");
+        println!("How Are you Want To Rename It");
+        let new_input = shorter_input();
+        let new_name = Task {
+            text: new_input,
+            completed: false,
+        };
+        tasks[i as usize] = new_name;
+    }
+}
+
+fn mark_done(tasks: &mut Vec<Task>) {
+    if tasks.is_empty() {
+        println!("You Dont Have Tasks To mark As Done");
+        println!("You Should Create New Task");
+    }
+    else {
+        println!("Heres All your tasks Which One You Want Mark As Done {:?}", tasks);
+        println!("Which One You Want To Edit use only number ");
+        let i: u8 = shorter_input().parse().expect("BimBimBamBam");
+        println!("Are You Sure You Want To mark as Done it (Y = yes N = no)");
+        let x: String = shorter_input().parse().expect("BimBimBamBam");
+        if x == "Y" {
+            println!("Okay");
+            //let mut new_completion = Task.completed = true;
+            tasks[i as usize].completed = true;
+        }
+        else {
+            println!("Okay Xd");
+        }
+    }
 }
 
 fn shorter_input() -> String {
