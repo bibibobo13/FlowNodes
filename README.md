@@ -30,7 +30,7 @@ Tasks are represented by their complexity:
 
 ## 📱 Follow Along
 
-- **Daily updates**: [Tiktok @antonbylvar](https://www.tiktok.com/@antonbylvar)
+- **Daily updates**: [Tiktok @FlowingNodes](https://www.tiktok.com/@flowingnodes)
 - **Current status**: Basic task structure ✅
 - **Next**: Task persistence (Day 2-7)
 
