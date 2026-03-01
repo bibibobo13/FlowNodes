@@ -1,24 +1,43 @@
-
 # 🌸 FlowNodes
 
-> **Stoic Philosophy meets Geometric Logic.**
+> Stoic Philosophy meets Geometric Logic
 
-A unique task management ecosystem built with **Rust**, moving from a simple CLI to a beautiful Zen-inspired GUI.
+A unique task management ecosystem built in Rust 🦀
+Moving from simple CLI → Terminal UI → Zen GUI
 
-## 📐 The Concept
-Tasks are represented by **Polygons**:
-- **Triangle (3 edges)**: Low complexity
-- **Square (4 edges)**: Medium complexity
-- **Pentagon (5+ edges)**: High complexity / Focus required
+## 📐 The Polygon Concept
+
+Tasks are represented by their complexity:
+* 🔺 Triangle (3 edges): Low complexity
+* 🔷 Square (4 edges): Medium complexity  
+* ⬟ Pentagon (5+ edges): High complexity
+
+*"The more sides, the more focus required"*
 
 ## 🧘 Stoic Integration
-- Daily reflections
-- "Amor Fati" motivation module
-- Virtue-based task tracking
+* Daily Stoic reflections
+* "Amor Fati" motivation
+* Virtue-based tracking
+* "The obstacle is the way"
 
-## 📅 The 140-Day Journey
-I am 12 years old, and this is my path to mastering Rust.
-- [ ] **Days 1-20**: Foundation & Persistence (CLI)
-- [ ] **Days 20-60**: Terminal UI (Ratatui)
-- [ ] **Days 60-100**: Zen GUI (egui/wgpu)
-- [ ] **Days 100-140**: Stoic expansion & Launch
+**Progress: Day 1/140** 🔥
+
+- [x] Day 1: Foundation ✅
+- [ ] Days 1-20: CLI with persistence
+- [ ] Days 20-60: Terminal UI (Ratatui)
+- [ ] Days 60-100: Zen GUI (egui/wgpu)
+- [ ] Days 100-140: Stoic features & Launch
+
+## 📱 Follow Along
+
+- **Daily updates**: [Tiktok @antonbylvar](https://www.tiktok.com/@antonbylvar)
+- **Current status**: Basic task structure ✅
+- **Next**: Task persistence (Day 2-7)
+
+---
+
+*"The impediment to action advances action. 
+What stands in the way becomes the way."* 
+— Marcus Aurelius
+
+⭐ Star to follow the 140-day journey
