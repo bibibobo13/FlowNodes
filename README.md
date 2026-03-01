@@ -20,7 +20,7 @@ Tasks are represented by their complexity:
 * Virtue-based tracking
 * "The obstacle is the way"
 
-**Progress: Day 1/140** 🔥
+**Progress: Day 2/140** 🔥
 
 - [x] Day 1: Foundation ✅
 - [ ] Days 1-20: CLI with persistence
