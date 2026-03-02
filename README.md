@@ -20,10 +20,10 @@ Tasks are represented by their complexity:
 * Virtue-based tracking
 * "The obstacle is the way"
 
-**Progress: Day 2/140** 🔥
+**Progress: Day 3/140** 🔥
 
 - [x] Day 1: Foundation ✅
-- [ ] Days 1-20: CLI with persistence
+- [x] Days 1-20: CLI with persistence
 - [ ] Days 20-60: Terminal UI (Ratatui)
 - [ ] Days 60-100: Zen GUI (egui/wgpu)
 - [ ] Days 100-140: Stoic features & Launch
