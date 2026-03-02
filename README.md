@@ -24,7 +24,6 @@ Tasks are represented by their complexity:
 
 - [x] Day 1: Foundation ✅
 - [x] Days 1-20: CLI with persistence
-- [ ] Days 20-60: Terminal UI (Ratatui)
 - [ ] Days 60-100: Zen GUI (egui/wgpu)
 - [ ] Days 100-140: Stoic features & Launch
 
