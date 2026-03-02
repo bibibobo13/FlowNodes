@@ -20,19 +20,18 @@ Tasks are represented by their complexity:
 * Virtue-based tracking
 * "The obstacle is the way"
 
-**Progress: Day 1/140** 🔥
+**Progress: Day 3/140** 🔥
 
 - [x] Day 1: Foundation ✅
-- [ ] Days 1-20: CLI with persistence
-- [ ] Days 20-60: Terminal UI (Ratatui)
-- [ ] Days 60-100: Zen GUI (egui/wgpu)
+- [ ] Days 1-10: CLI with persistence
+- [ ] Days 15-100: Zen GUI (egui/wgpu)
 - [ ] Days 100-140: Stoic features & Launch
 
 ## 📱 Follow Along
 
-- **Daily updates**: [Tiktok @antonbylvar](https://www.tiktok.com/@antonbylvar)
+- **Daily updates**: [Tiktok @FlowingNodes](https://www.tiktok.com/@flowingnodes)
 - **Current status**: Basic task structure ✅
-- **Next**: Task persistence (Day 2-7)
+- **Next**: Task Is To Try Implement Work With Gui Day 15-100
 
 ---
 
