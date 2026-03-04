@@ -14,45 +14,25 @@ struct Task {
 }
 
 fn main() -> std::io::Result<()> {
-    let mut tasks: Vec<Task> = if Path::new("results.json").exists() {
-        let file = File::open("results.json")?;
-        let reader = BufReader::new(file);
-        serde_json::from_reader(reader)?
-    } else {
-        Vec::new()
-    };
+    let mut tasks = load_tasks().unwrap();
+    main_visuals(&mut tasks);
+    Ok(())
+}
+fn main_visuals(mut tasks: &mut Vec<Task>) -> () {
+    println!("Select Waht You Want To Do With Task");
+    println!("1. add_task\n2. edit_task\n3. mark_done\n4. delete_task\n5. watch_tasks \n6.Quit");
     loop {
-        println!(
-            "1. For New Task \n2. For Edit Task or add a Path \n3. For Marking As Done \n4. For Deleting Task \n5. Watch Tasks \n6. Quit"
-        );
         let selected: i32 = shorter_input(true).parse().unwrap();
         match selected {
-            1 => {
-                add_task_visuals(&mut tasks);
-                saving(&tasks);
-            }
-            2 => {
-                edit_task(&mut tasks);
-                saving(&tasks);
-            }
-            3 => {
-                mark_done(&mut tasks);
-                saving(&tasks);
-            }
-            4 => {
-                delete_task(&mut tasks);
-                saving(&tasks);
-            }
-            5 => {
-                watch_tasks(&tasks);
-                saving(&tasks);
-            }
-            6 => {
-                saving(&tasks);
-                break Ok(());
-            }
+            1 => add_task_visuals(&mut tasks),
+            2 => edit_task_visuals(&mut tasks),
+            3 => mark_done_visuals(&mut tasks),
+            4 => delete_task_visuals(&mut tasks),
+            5 => watch_tasks(&tasks),
+            6 => break,
             _ => println!("Wrong Number"),
         }
+        let _ = saving(tasks);
     }
 }
 fn saving(tasks: &Vec<Task>) -> std::io::Result<()> {
@@ -60,6 +40,17 @@ fn saving(tasks: &Vec<Task>) -> std::io::Result<()> {
     let mut writer = BufWriter::new(file);
     serde_json::to_writer(&mut writer, &tasks)?;
     writer.flush()
+}
+fn load_tasks() -> std::io::Result<Vec<Task>> {
+    let path = "results.json";
+    if !Path::new(path).exists() {
+        return Ok(Vec::new());
+    }
+    // Відкриваємо файл для читання
+    let file = File::open(path)?;
+    let reader = BufReader::new(file);
+    let tasks = serde_json::from_reader(reader).unwrap_or_else(|_| Vec::new());
+    Ok(tasks)
 }
 
 fn add_task(tasks: &mut Vec<Task>, text: String) {
@@ -70,19 +61,19 @@ fn add_task(tasks: &mut Vec<Task>, text: String) {
     tasks.push(users_task);
 }
 
-fn edit_task(tasks: &mut Vec<Task>, value: u8, input: String) {
+fn edit_task(tasks: &mut Vec<Task>, value: usize, input: String) {
     let new_name = Task {
         text: input,
         completed: false,
     };
-    tasks[value as usize] = new_name;
+    tasks[value] = new_name;
 }
 
-fn mark_done(tasks: &mut Vec<Task>, value: u8) {
-    tasks[value as usize].completed = true;
+fn mark_done(tasks: &mut Vec<Task>, value: usize) {
+    tasks[value].completed = true;
 }
-fn delete_task(tasks: &mut Vec<Task>, value: u8) {
-    tasks.remove(value as usize);
+fn delete_task(tasks: &mut Vec<Task>, value: usize) {
+    tasks.remove(value);
 }
 fn watch_tasks(tasks: &Vec<Task>) {
     println!("Heres Your Tasks {:?}", tasks);
@@ -120,7 +111,7 @@ fn edit_task_visuals(tasks: &mut Vec<Task>) -> () {
     } else {
         println!("Heres All You Have {:?}", tasks);
         println!("Which One You Want To Edit use only number ");
-        let i: u8 = shorter_input(true).parse().expect("BimBimBamBam");
+        let i: usize = shorter_input(true).parse().expect("BimBimBamBam");
         let i = i - 1;
         if i as usize >= tasks.len() {
             println!("You Selected Wrong Task");
@@ -141,7 +132,7 @@ fn mark_done_visuals(tasks: &mut Vec<Task>) -> () {
             tasks
         );
         println!("Which One You Want To Edit use only number ");
-        let i: u8 = shorter_input(true).parse().expect("BimBimBamBam");
+        let i: usize = shorter_input(true).parse().expect("BimBimBamBam");
         let i = i - 1;
         println!("Are You Sure You Want To mark as Done it (Y = yes N = no)");
         let x: String = shorter_input(false).parse().expect("BimBimBamBam");
@@ -163,7 +154,7 @@ fn delete_task_visuals(tasks: &mut Vec<Task>) -> () {
             tasks
         );
         println!("Which one you wana to deleate use only numbers");
-        let i: u8 = shorter_input(true).parse().expect("BimBimBamBam");
+        let i: usize = shorter_input(true).parse().expect("BimBimBamBam");
         let i = i - 1;
         println!("Are You Sure You Want To Delete It Couldnt Be Redone (Y = yes N = no");
         let x: String = shorter_input(false).parse().expect("BimBimBamBam");
