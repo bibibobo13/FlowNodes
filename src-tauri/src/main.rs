@@ -1,8 +1,8 @@
 //raw Code No TUI or Gui for now
 //Tasks Struct
 use serde::{Deserialize, Serialize};
-use serde_json::Value;
 use serde_json::json;
+use serde_json::Value;
 use std::fs::File;
 use std::io;
 use std::io::{BufReader, BufWriter, Write};
@@ -12,8 +12,16 @@ struct Task {
     text: String,
     completed: bool,
 }
-
+#[tauri::command]
+fn greet() -> String {
+    "Hello World".into()
+}
 fn main() -> std::io::Result<()> {
+    tauri::Builder::default()
+        .invoke_handler(tauri::generate_handler![greet])
+        .run(tauri::generate_context!())
+        .expect("Error Launching Tauri");
+
     let mut tasks = load_tasks().unwrap();
     main_visuals(&mut tasks);
     Ok(())
