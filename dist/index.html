@@ -7,11 +7,9 @@
 
 
     <script>
-      // Витягуємо invoke з нутрощів Tauri
       const { invoke } = window.__TAURI__.core;
 
       document.getElementById("hello-btn").addEventListener("click", async () => {
-        // Стукаємо в Rust функцію "greet"
         const msg = await invoke("greet");
         document.getElementById("response").innerText = msg;
       });
