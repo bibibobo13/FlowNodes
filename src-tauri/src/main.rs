@@ -7,6 +7,8 @@ use std::fs::File;
 use std::io;
 use std::io::{BufReader, BufWriter, Write};
 use std::path::Path;
+use tauri::Manager;
+use window_vibrancy::{apply_acrylic, apply_mica};
 #[derive(Debug, serde::Serialize, Deserialize, Clone)]
 struct Task {
     text: String,
@@ -18,9 +20,18 @@ fn greet() -> String {
 }
 fn main() -> std::io::Result<()> {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        .setup(|app| {
+            let window = app.get_webview_window("main").unwrap();
+            
+            
+            #[cfg(target_os = "windows")]
+            apply_acrylic(&window, Some((10, 10, 10, 1)))
+                .expect("Unsupported platform! 'Apply Acrylic' is only supported on Windows 10/11.");
+
+            Ok(())
+        })
         .run(tauri::generate_context!())
-        .expect("Error Launching Tauri");
+        .expect("error while running tauri application");
 
     let mut tasks = load_tasks().unwrap();
     main_visuals(&mut tasks);

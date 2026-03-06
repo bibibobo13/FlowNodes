@@ -1,21 +1,152 @@
 <!DOCTYPE html>
-<html>
-  <head><meta charset="UTF-8"></head>
-  <body style="background: #1e1e1e; color: white; font-family: sans-serif; text-align: center; padding-top: 50px;">
-    
-    <h1>🌸 FlowNodes: Day 5</h1>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+  body {
+    overflow: hidden;
+  }
+  .app {
+    display: flex;
+    flex-direction: column;
+    height: 97vh;   
+    overflow: hidden; 
+  }
 
+  .topbar {
+    height: 20px;  
+    flex-shrink: 0; 
+    background: #222;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  }
 
-    <script>
+  .main-area {
+    display: flex;
+    flex-grow: 1; 
+  }
 
-      const { invoke } = window.__TAURI__.core;
+  .sidebar {
+    width: 80px;
+    flex-shrink: 0;
+    background: #333;
+    color: white; 
+    height: 100vh;
+  }
 
-      document.getElementById("hello-btn").addEventListener("click", async () => {
+  .More {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    cursor: pointer;
+    transition: 1s ease;
+    position: relative;
+  }
+  .icon {
+    margin-top: 15px;
+    transition: 1s ease;
+  }
 
-        const msg = await invoke("greet");
-        document.getElementById("response").innerText = msg;
-      });
-    </script>
-  </body>
+  .text {
+    top: 5px;
+    font-size: 8px;
+    text-transform: uppercase; 
+    margin-top: 8px;
+  }
+  .More:hover {
+    transform: translateY(-6px);
+  }
+  .More:hover .icon,
+  .More:hover .text {
+    transform: scale(1.2);
+  }
+  .SideButtonMore {
+    position: absolute;
+    right: 70px;     
+    top: 55%;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255);
+    height: 0;
+    width: 8px;        
+    border-radius: 40px;
+    opacity: 0;
+    z-index: 1;
+    transition: height 1s ease-in-out, opacity 1s ease-in-out;
+    filter: drop-shadow(0 0 5px oklch(100% 0.00011 271.152 / 0.8));
+  }
+  .More:hover .icon {
+    filter: drop-shadow(0 0 5px oklch(100% 0.00011 271.152 / 0.8));
+  }
+
+  .More.active .SideButtonMore {
+    height: 60px;
+    opacity: 1;
+  }
+
+  .More.active .SideBox {
+    right: 15px; 
+    opacity: 0.3;
+  }.SideBox {
+    position: absolute;
+    right: 70px;     
+    top: 54%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 58px;
+    background-color: rgb(186, 201, 255);
+    border-radius: 6px;
+    opacity: 0;
+    filter: drop-shadow(0 0 5px oklch(83.187% 0.10524 229.727 / 0.8));
+    transition: right 1s ease-in-out 1s, opacity 1s ease-in-out 1s;
+    opacity: 0;
+  }
+
+  .canvas {
+    flex-grow: 1; 
+    background: #111;
+    position: relative;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="app">
+  <div class="topbar">FlowNodes - Daily Tasks</div>
+
+  <div class="main-area">
+    <div class="sidebar">
+        <div class="More">
+          <svg class="icon" xmlns="http://www.w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+          <span class="text">more</span>
+        <div class="SideButtonMore">
+        </div>
+        <div class="SideBox"></div>
+      </div>
+    </div>
+    <div class="canvas">Canvas</div>
+  </div>
+</div>
+<script>
+  document.querySelector('.More').addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
+</script>
+</body>
 </html>
-
