@@ -3,7 +3,7 @@
 > Stoic Philosophy meets Geometric Logic
 
 A unique task management ecosystem built in Rust 🦀
-Moving from simple CLI → Terminal UI → Zen GUI
+Moving from simple CLI → Zen GUI
 
 ## 📐 The Polygon Concept
 
@@ -20,18 +20,18 @@ Tasks are represented by their complexity:
 * Virtue-based tracking
 * "The obstacle is the way"
 
-**Progress: Day 3/140** 🔥
+**Progress: Day 7/140** 🔥
 
 - [x] Day 1: Foundation ✅
-- [ ] Days 1-10: CLI with persistence
-- [ ] Days 15-100: Zen GUI (egui/wgpu)
+- [x] Days 1-10: CLI with persistence
+- [ ] Days 15-100: Zen GUI (Tauri)
 - [ ] Days 100-140: Stoic features & Launch
 
 ## 📱 Follow Along
 
 - **Daily updates**: [Tiktok @FlowingNodes](https://www.tiktok.com/@flowingnodes)
 - **Current status**: Basic task structure ✅
-- **Next**: Task Is To Try Implement Work With Gui Day 15-100
+- **Next**: Task Is To Make Zeb Gui
 
 ---
 
