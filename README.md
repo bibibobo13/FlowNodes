@@ -1,38 +1,47 @@
+# 🌸 FlowNodes
 
-🌸 FlowNodes
+> **Stoic Philosophy meets Geometric Logic**
 
-    Stoic Philosophy meets Geometric Logic
+A unique task management ecosystem built in **Rust** 🦀 
+*Moving from simple CLI → Zen GUI*
 
-A unique task management ecosystem built in Rust 🦀 Moving from simple CLI → Zen GUI
-📐 The Polygon Concept
+---
 
+## 📐 The Polygon Concept
 Tasks are represented by their complexity:
 
-    🔺 Triangle (3 edges): Low complexity
-    🔷 Square (4 edges): Medium complexity
-    ⬟ Pentagon (5+ edges): High complexity
+*   🔺 **Triangle (3 edges):** Low complexity
+*   🔷 **Square (4 edges):** Medium complexity
+*   ⬟ **Pentagon (5+ edges):** High complexity
 
-"The more sides, the more focus required"
-🧘 Stoic Integration
+> *"The more sides, the more focus required"*
 
-    Daily Stoic reflections
-    "Amor Fati" motivation
-    Virtue-based tracking
-    "The obstacle is the way"
+---
 
-Progress: Day 13/140 🔥
+## 🧘 Stoic Integration
+*   Daily Stoic reflections
+*   **"Amor Fati"** motivation
+*   Virtue-based tracking
+*   *"The obstacle is the way"*
 
-    Day 1: Foundation ✅
-    Days 1-10: CLI with persistence✅
-    Days 15-100: Zen GUI (Tauri)
-    Days 100-140: Stoic features & Launch
+---
 
-📱 Follow Along
+## 🔥 Progress: Day 13/140
+- [x] **Day 1:** Foundation
+- [x] **Days 1-10:** CLI with persistence
+- [ ] **Days 15-100:** Zen GUI (Tauri)
+- [ ] **Days 100-140:** Stoic features & Launch
 
-    Daily updates: Tiktok @FlowingNodes
-    Current status: Basic task structure ✅
-    Next: Task Is To Make Zeb Gui
+---
 
-"The impediment to action advances action. What stands in the way becomes the way." — Marcus Aurelius
+## 📱 Follow Along
+*   **Daily updates:** [Tiktok @FlowingNodes](https://www.tiktok.com/@flownodes)
+*   **Current status:** Basic task structure ✅
+*   **Next:** Task Is To Make **Zen GUI**
 
-⭐ Star to follow the 140-day journey
+---
+
+> *"The impediment to action advances action. What stands in the way becomes the way."*  
+> — **Marcus Aurelius**
+
+⭐ **Star to follow the 140-day journey!**
