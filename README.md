@@ -26,7 +26,7 @@ Tasks are represented by their complexity:
 
 ---
 
-## 🔥 Progress: Day 13/140
+## 🔥 Progress: Day 14/140
 - [x] **Day 1:** Foundation
 - [x] **Days 1-10:** CLI with persistence
 - [ ] **Days 15-100:** Zen GUI (Tauri)
