@@ -134,7 +134,7 @@ body {
 
 .mac-controls {
   position: absolute;
-  left: 15px; /* На маку вони зліва, але можеш поставити right: 15px */
+  left: 15px; 
   display: flex;
   gap: 8px;
 }
@@ -157,7 +157,7 @@ body {
   filter: brightness(1.2);
 }
 
-/* Щоб було зручніше тягати вікно */
+
 .topbar {
   position: relative;
   user-select: none;
