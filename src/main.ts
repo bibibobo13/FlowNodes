@@ -29,8 +29,6 @@ buttons.forEach((btn) => {
     moveIndicator(btn);
     
     const key = btn.getAttribute("data-key") || "unknown";
-    
-    // Оновлюємо контент (якщо він є)
     if (contentArea) {
       contentArea.classList.remove("content-animate");
 
@@ -47,7 +45,6 @@ buttons.forEach((btn) => {
 
 
 window.addEventListener("load", () => {
-  // Запускаємо іконки Feather
   if (typeof feather !== 'undefined') {
     feather.replace();
   }
