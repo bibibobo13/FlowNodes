@@ -6,6 +6,9 @@ const appWindow = getCurrentWindow();
 const buttons = document.querySelectorAll(".nav-btn") as NodeListOf<HTMLElement>;
 const indicator = document.getElementById("side-indicator") as HTMLElement | null;
 const contentArea = document.getElementById("content-area") as HTMLElement | null;
+const popup = document.getElementById('popup') as HTMLElement;
+const input = document.querySelector('.NameOfTask') as HTMLInputElement;
+const submitBtn = document.querySelector('.Submit') as HTMLButtonElement;
 
 
 function moveIndicator(btn: HTMLElement): void {
@@ -30,7 +33,7 @@ buttons.forEach((btn) => {
     
     const key = btn.getAttribute("data-key") || "unknown";
     
-    // Оновлюємо контент (якщо він є)
+    
     if (contentArea) {
       contentArea.classList.remove("content-animate");
 
@@ -42,12 +45,16 @@ buttons.forEach((btn) => {
         <p style="opacity:0.4; margin-top:12px;">You Clicked On ${key}.</p>
       `;
     }
+    if (key === 'add') {
+      popup.classList.add('show');
+      setTimeout(() => input.focus(), 300);
+    }
   });
 });
 
 
 window.addEventListener("load", () => {
-  // Запускаємо іконки Feather
+  
   if (typeof feather !== 'undefined') {
     feather.replace();
   }
@@ -68,3 +75,9 @@ const maxBtn = document.getElementById('maximize');
 closeBtn?.addEventListener('click', () => appWindow.close());
 minBtn?.addEventListener('click', () => appWindow.minimize());
 maxBtn?.addEventListener('click', () => appWindow.toggleMaximize());
+
+submitBtn.addEventListener('click', () => {
+    const taskName = input.value;
+    input.value = "";
+    popup.classList.remove('show');
+});
