@@ -41,6 +41,15 @@ Tasks are represented by their complexity:
 
 ---
 
+## 💎 Support the Project
+If you like my journey or the app, you can support me with a donation in **TON** cryptocurrency. 
+Every bit of support helps me learn more and build even cooler projects!
+
+**TON Address:** `UQDgXMkhgn2OQYxdQREt4YdBddSwMim-c14dD_QLBdBXvB-j`
+
+---
+*Built with logic, stoicism, and a lot of Rust.*
+
 > *"The impediment to action advances action. What stands in the way becomes the way."*  
 > — **Marcus Aurelius**
 
